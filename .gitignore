@@ -32,4 +32,6 @@ sysinfo.txt
 #Demo
 Demo.unity
 Demo.unity.meta
+_Completed-Assets/
+_Completed-Assets.meta
 # End of https://www.gitignore.io/api/unity
