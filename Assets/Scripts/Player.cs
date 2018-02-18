@@ -5,10 +5,14 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     public float speed = 5;
+
+    public GameObject Bullet;
         
-	// Use this for initialization
-	void Start () {
-		
+    IEnumerator Start () {
+        while (true) {
+            Instantiate(Bullet, transform.position, transform.rotation);
+            yield return new WaitForSeconds(0.05f);
+        }
 	}
 	
 	// Update is called once per frame
