@@ -5,13 +5,18 @@ using UnityEngine;
 
 public class SpaceShip : MonoBehaviour {
 
+    // メンバ変数の宣言
     public float Speed;
     public float ShotDelay;
-    public GameObject Bullet;
     public bool CanShot;
 
+    // 
+    public GameObject Bullet; 
+
+    // 
     public void Shot (Transform origin)
     {
+        // 
         Instantiate(Bullet, origin.position, origin.rotation);
     }
 
