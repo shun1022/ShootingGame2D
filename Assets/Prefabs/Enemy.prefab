@@ -181,7 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 0.5
   ShotDelay: 0.3
-  Bullet: {fileID: 0}
+  Bullet: {fileID: 1629314589047742, guid: 674a1977a843e4dd8a12c592bc2e8066, type: 2}
   CanShot: 1
 --- !u!114 &114938112559730878
 MonoBehaviour:
