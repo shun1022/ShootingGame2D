@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-    SpaceShip spaceship;
+    // 
+    SpaceShip SpaceShip;
 
+    // 
     public GameObject Bullet;
         
+    // 
     IEnumerator Start () {
-        spaceship = GetComponent<SpaceShip>();
-
+        // 
+        SpaceShip = GetComponent<SpaceShip>();
+        // 
         while (true) {
-            spaceship.Shot(transform);
-            yield return new WaitForSeconds(spaceship.ShotDelay);
+            SpaceShip.Shot(transform);
+            yield return new WaitForSeconds(SpaceShip.ShotDelay);
         }
 	}
 	
@@ -22,6 +26,6 @@ public class Player : MonoBehaviour {
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
         Vector2 direction = new Vector2(x, y).normalized;
-        spaceship.Move (direction);
+        SpaceShip.Move (direction);
 	}
 }

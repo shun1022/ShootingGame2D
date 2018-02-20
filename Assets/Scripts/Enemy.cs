@@ -5,14 +5,14 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
-    SpaceShip spaceship;
+    SpaceShip SpaceShip;
 
     IEnumerator Start()
     {
-        spaceship = GetComponent<SpaceShip>();
-        spaceship.Move(transform.up * -1);
+        SpaceShip = GetComponent<SpaceShip>();
+        SpaceShip.Move(transform.up * -1);
 
-        if (spaceship.CanShot == false){
+        if (SpaceShip.CanShot == false){
             yield break;
         }
             
@@ -21,10 +21,10 @@ public class Enemy : MonoBehaviour
             
             for (int i = 0; i < transform.childCount; i++){
                 Transform ShotPosition = transform.GetChild(i);
-                spaceship.Shot(ShotPosition);
+                SpaceShip.Shot(ShotPosition);
             }
 
-            yield return new WaitForSeconds(spaceship.ShotDelay);
+            yield return new WaitForSeconds(SpaceShip.ShotDelay);
 
         }
     }
