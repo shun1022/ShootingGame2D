@@ -2,18 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour {
+public class Enemy : MonoBehaviour
+{
 
     SpaceShip spaceship;
 
-	// Use this for initialization
-	void Start () {
+    IEnumerator Start()
+    {
         spaceship = GetComponent<SpaceShip>();
         spaceship.Move(transform.up * -1);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+        while (true) {
+            for (int i = 0; i < transform.childCount; i++){
+                Transform ShotPosition = transform.GetChild(i);
+                spaceship.Shot(ShotPosition);
+            }
+            yield return new WaitForSeconds(spaceship.ShotDelay);
+        }
+    }
+
 }
