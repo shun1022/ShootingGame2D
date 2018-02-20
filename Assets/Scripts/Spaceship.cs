@@ -10,18 +10,20 @@ public class SpaceShip : MonoBehaviour {
     public float ShotDelay;
     public bool CanShot;
 
-    // 
-    public GameObject Bullet; 
+    // ゲームオブジェクトにBulletコンポーネントを追加するためにGameObject型の変数Bulletを宣言
+    public GameObject Bullet;
 
-    // 
+    // 弾を作成するメソッドShotの宣言
     public void Shot (Transform origin)
     {
-        // 
+        // オブジェクトBulletを生成する
         Instantiate(Bullet, origin.position, origin.rotation);
     }
 
+    // 機体を移動するメソッドMove
     public void Move (Vector2 direction)
     {
+        // Rigidbody2Dを取得、設定された方向に移動
         GetComponent<Rigidbody2D>().velocity = direction * Speed;
     }
 
