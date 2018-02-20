@@ -8,6 +8,7 @@ public class SpaceShip : MonoBehaviour {
     public float Speed;
     public float ShotDelay;
     public GameObject Bullet;
+    public bool CanShot;
 
     public void Shot (Transform origin)
     {
