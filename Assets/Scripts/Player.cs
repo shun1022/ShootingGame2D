@@ -13,10 +13,10 @@ public class Player : MonoBehaviour {
     // コルーチンでStartメソッドを呼び出す
     IEnumerator Start () {
         
-        // SpaceShipクラスを取得
+        // GetComponentでSpaceShipクラスのインスタンスを取得しローカル変数SpaceShipで保持
         SpaceShip = GetComponent<SpaceShip>();
 
-        // 発射するたびにShotDelay秒中断し、再開することで連射になる
+        // 発射するたびにShotDelay秒中断し、再開する
         while (true) {
             SpaceShip.Shot(transform);
             yield return new WaitForSeconds(SpaceShip.ShotDelay);
