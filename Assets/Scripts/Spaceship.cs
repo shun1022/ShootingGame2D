@@ -13,6 +13,15 @@ public class SpaceShip : MonoBehaviour {
     // ゲームオブジェクトにBulletコンポーネントを追加するためにGameObject型の変数Bulletを宣言
     public GameObject Bullet;
 
+    // ゲームオブジェクトにExplosionコンポーネントを追加
+    public GameObject explosion;
+
+    // 爆発するメソッドExplosionを宣言
+    public void Explosion() {
+        // 
+        Instantiate(explosion, transform.position, transform.rotation);
+    }
+
     // 弾を作成するメソッドShotの宣言
     public void Shot (Transform origin)
     {

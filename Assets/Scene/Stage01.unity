@@ -152,6 +152,43 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 122f0789d9923487cb447e9d49d8fcf1, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &846059208 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1837200195757784, guid: 1c107b91ffe1443ccb86182bcfc83d6d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1957824576}
+--- !u!60 &846059209
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 846059208}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.96, y: 0.96}
+    newSize: {x: 0.96, y: 0.96}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.122483775, y: 0.24830854}
+      - {x: -0.21244289, y: 0.17335474}
+      - {x: -0.2455354, y: -0.13807511}
+      - {x: -0.12898993, y: -0.26820838}
+      - {x: 0.1162865, y: -0.26423442}
+      - {x: 0.23231263, y: -0.1720519}
+      - {x: 0.2323125, y: 0.16912019}
+      - {x: 0.12859929, y: 0.25270355}
 --- !u!1 &1944960654 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1082464351209668, guid: 122f0789d9923487cb447e9d49d8fcf1,
@@ -166,7 +203,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
