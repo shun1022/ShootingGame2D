@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50615745280252152}
   - component: {fileID: 114362250488393710}
   - component: {fileID: 114385839196865008}
+  - component: {fileID: 61505633592204790}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -64,6 +65,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &61505633592204790
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1082464351209668}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.96, y: 0.96}
+    newSize: {x: 0.96, y: 0.96}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.06, y: 0.06}
+  m_EdgeRadius: 0
 --- !u!95 &95034554150999150
 Animator:
   serializedVersion: 3
@@ -108,6 +134,7 @@ MonoBehaviour:
   ShotDelay: 0.05
   CanShot: 1
   Bullet: {fileID: 1542036616573626, guid: f18fe1500e67e467f94f4bfc0c8d8f2d, type: 2}
+  explosion: {fileID: 1086301799807590, guid: 7708419d009e84c5fb0a7fdcc6ae5baa, type: 2}
 --- !u!212 &212240851763178552
 SpriteRenderer:
   m_ObjectHideFlags: 1
