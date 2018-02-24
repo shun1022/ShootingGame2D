@@ -33,4 +33,17 @@ public class Player : MonoBehaviour {
         // 移動するメソッドMoveを呼び出す
         SpaceShip.Move(direction);
 	}
+
+    // 何かにぶつかった時に呼びだされるメソッド
+    private void OnTriggerEnter2D(Collider2D c)
+    {
+        // 弾を削除
+        Destroy(c.gameObject);
+
+        // 機体が爆発する
+        SpaceShip.Explosion();
+
+        // Playerオブジェクトの削除
+        Destroy(gameObject);
+    }
 }
