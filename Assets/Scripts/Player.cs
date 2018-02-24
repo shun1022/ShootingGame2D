@@ -37,13 +37,24 @@ public class Player : MonoBehaviour {
     // 何かにぶつかった時に呼びだされるメソッド
     private void OnTriggerEnter2D(Collider2D c)
     {
-        // 弾を削除
-        Destroy(c.gameObject);
+        // レイヤーの名前をメンバ変数LayerNameに取得する
+        string LayerName = LayerMask.LayerToName(c.gameObject.layer);
 
-        // 機体が爆発する
-        SpaceShip.Explosion();
+        // レイヤー名がBullet(Enemy)の場合
+        if (LayerName == "Bullet(Enemy)")
+        {
+            // 弾を削除
+            Destroy(c.gameObject);
+        }
 
-        // Playerオブジェクトの削除
-        Destroy(gameObject);
+        // レイヤー名がBullet(Enemy),Enemyだった場合
+        if (LayerName == "Bullet(Enemy)" || LayerName == "Enemy")
+        {
+            // 機体が爆発する
+            SpaceShip.Explosion();
+
+            // Playerオブジェクトの削除
+            Destroy(gameObject);
+        }
     }
 }
