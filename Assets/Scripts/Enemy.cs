@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
             // int型の変数iを宣言し0を代入、子要素ShotPositionを全て取得するまで繰り返す
             for (int i = 0; i < transform.childCount; i++){
                 
-                // GetChildメソッドでi番目かつTransformクラスの子要素ShotPosition
+                // GetChildメソッドでi番目かつTransformクラスの子要素ShotPositionを取得
                 Transform ShotPosition = transform.GetChild(i);
 
                 // Shotメソッドを呼び出し、ShotPositionの位置と角度で弾を撃つ
@@ -36,8 +36,25 @@ public class Enemy : MonoBehaviour
 
             // ShotDelay杪待つ
             yield return new WaitForSeconds(SpaceShip.ShotDelay);
-
-        }
+            }
     }
 
+    // 何かにぶつかると呼び出されるメソッド
+    void OnTriggerEnter2D(Collider2D C)
+    {
+        // ローカル変数LayerNameにレイヤー名を取得
+        string LayerName = LayerMask.LayerToName(C.gameObject.layer);
+
+        // レイヤー名がBullet (Player)である時以外何もしない
+        if (LayerName != "Bullet (Player)") return;
+
+        // 弾を削除
+        Destroy(C.gameObject);
+
+        // 爆発
+        SpaceShip.Explosion();
+
+        // Enemyの削除
+        Destroy(gameObject);
+    }
 }
