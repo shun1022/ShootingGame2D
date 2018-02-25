@@ -18,6 +18,7 @@ public class SpaceShip : MonoBehaviour {
 
     // 爆発するメソッドExplosionを宣言
     public void Explosion() {
+        
         // 爆発を作成する
         Instantiate(explosion, transform.position, transform.rotation);
     }
