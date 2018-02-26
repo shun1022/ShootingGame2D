@@ -37,12 +37,12 @@ public class SpaceShip : MonoBehaviour {
         GetComponent<Rigidbody2D>().velocity = direction * Speed;
     }
 
-    // Use this for initialization
+    // 
     void Start () {
 		
 	}
 	
-	// Update is called once per frame
+	// 
 	void Update () {
 		
 	}
