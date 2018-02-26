@@ -20,7 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4615097652713878}
   - component: {fileID: 212902936914827550}
-  m_Layer: 0
+  - component: {fileID: 60145113035729950}
+  m_Layer: 10
   m_Name: Bullet (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +37,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4638954020442200}
   - component: {fileID: 212702529556525430}
-  m_Layer: 0
+  - component: {fileID: 60491827900719880}
+  m_Layer: 10
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +55,7 @@ GameObject:
   - component: {fileID: 4330350192552154}
   - component: {fileID: 50588666197134762}
   - component: {fileID: 114542119678712330}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PlayerBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1542036616573626}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2.8410816, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4638954020442200}
@@ -121,6 +123,66 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!60 &60145113035729950
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1049839219813698}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.03292571, y: 0.03903985}
+      - {x: -0.014891446, y: -0.084582806}
+      - {x: 0.015371434, y: -0.065371275}
+      - {x: 0.020742819, y: -0.03462863}
+      - {x: 0.029519953, y: 0.030742645}
+      - {x: 0.0065943003, y: 0.07122278}
+--- !u!60 &60491827900719880
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1434141240925768}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.03292571, y: 0.03903985}
+      - {x: -0.014891446, y: -0.084582806}
+      - {x: 0.015371434, y: -0.065371275}
+      - {x: 0.020742819, y: -0.03462863}
+      - {x: 0.029519953, y: 0.030742645}
+      - {x: 0.0065943003, y: 0.07122278}
 --- !u!114 &114542119678712330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -132,7 +194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e693875255a924a32aa8933369635b9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  Speed: 10
+  LifeTime: 1
 --- !u!212 &212702529556525430
 SpriteRenderer:
   m_ObjectHideFlags: 1

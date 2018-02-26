@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4478285076031942}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShotPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4572170332040054}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShotPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,8 @@ GameObject:
   - component: {fileID: 50748393765230000}
   - component: {fileID: 114878920437547214}
   - component: {fileID: 114938112559730878}
-  m_Layer: 0
+  - component: {fileID: 60229260783166822}
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +70,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4904992690824204}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShotPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,6 +152,38 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!60 &60229260783166822
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1837200195757784}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.96, y: 0.96}
+    newSize: {x: 0.96, y: 0.96}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.122483775, y: 0.24830854}
+      - {x: -0.21244289, y: 0.17335474}
+      - {x: -0.2455354, y: -0.13807511}
+      - {x: -0.12898993, y: -0.26820838}
+      - {x: 0.1162865, y: -0.26423442}
+      - {x: 0.23231263, y: -0.1720519}
+      - {x: 0.2323125, y: 0.16912019}
+      - {x: 0.12859929, y: 0.25270355}
 --- !u!95 &95686882640234954
 Animator:
   serializedVersion: 3
@@ -181,8 +214,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 0.5
   ShotDelay: 0.3
-  Bullet: {fileID: 1629314589047742, guid: 674a1977a843e4dd8a12c592bc2e8066, type: 2}
   CanShot: 1
+  Bullet: {fileID: 1629314589047742, guid: 674a1977a843e4dd8a12c592bc2e8066, type: 2}
+  explosion: {fileID: 1086301799807590, guid: 7708419d009e84c5fb0a7fdcc6ae5baa, type: 2}
 --- !u!114 &114938112559730878
 MonoBehaviour:
   m_ObjectHideFlags: 1
