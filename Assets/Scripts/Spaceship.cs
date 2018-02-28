@@ -30,13 +30,6 @@ public class SpaceShip : MonoBehaviour {
         Instantiate(Bullet, origin.position, origin.rotation);
     }
 
-    // 機体を移動するメソッドMove
-    public void Move (Vector2 direction)
-    {
-        // Rigidbody2Dを取得、設定された方向に移動
-        GetComponent<Rigidbody2D>().velocity = direction * Speed;
-    }
-
     // 
     void Start () {
 		
