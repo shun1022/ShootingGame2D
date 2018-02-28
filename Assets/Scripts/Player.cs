@@ -19,6 +19,9 @@ public class Player : MonoBehaviour {
         while (true) {
             SpaceShip.Shot(transform);
             yield return new WaitForSeconds(SpaceShip.ShotDelay);
+
+            // GetComponentでAudioSourceを取得しPlayメソッドで再生する
+            GetComponent<AudioSource>().Play();
         }
 	}
 	
