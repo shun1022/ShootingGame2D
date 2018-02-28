@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
         SpaceShip = GetComponent<SpaceShip>();
 
         // Moveメソッドを呼びだしy方向に移動する
-        SpaceShip.Move(transform.up * -1);
+        Move(transform.up * -1);
 
         // CanShotにチェックが入っていなければそれを中断する
         if (SpaceShip.CanShot == false){
@@ -39,6 +39,11 @@ public class Enemy : MonoBehaviour
             }
     }
 
+    // 
+    public void Move(Vector2 direction)
+    {
+        GetComponent<Rigidbody2D>().velocity = direction * SpaceShip.Speed;
+    }
     // 何かにぶつかると呼び出されるメソッド
     void OnTriggerEnter2D(Collider2D C)
     {
