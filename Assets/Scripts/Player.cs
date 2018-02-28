@@ -85,6 +85,9 @@ public class Player : MonoBehaviour {
 
             // Playerオブジェクトの削除
             Destroy(gameObject);
+
+            // Managerコンポーネントを探して取得し、GameOverメソッドを呼び出す
+            FindObjectOfType<Manager>().GameOver();
         }
     }
 }
