@@ -26,6 +26,7 @@ public class SpaceShip : MonoBehaviour {
     // 弾を作成するメソッドShotの宣言
     public void Shot (Transform origin)
     {
+
         // オブジェクトBulletを生成する
         Instantiate(Bullet, origin.position, origin.rotation);
     }
