@@ -61,7 +61,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1210417377922450
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,7 +223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4026034814426322
 Transform:
   m_ObjectHideFlags: 1
@@ -640,8 +640,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 0.5
-  ShotDelay: 0.3
-  CanShot: 0
+  ShotDelay: 0.01
+  CanShot: 1
   Bullet: {fileID: 1629314589047742, guid: 674a1977a843e4dd8a12c592bc2e8066, type: 2}
   explosion: {fileID: 1086301799807590, guid: 7708419d009e84c5fb0a7fdcc6ae5baa, type: 2}
 --- !u!114 &114143046920710082
