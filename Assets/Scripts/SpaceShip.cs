@@ -16,6 +16,9 @@ public class SpaceShip : MonoBehaviour {
     // ゲームオブジェクトにExplosionコンポーネントを追加
     public GameObject explosion;
 
+    // Animatorコンポーネント
+    private Animator Animator;
+
     // 爆発するメソッドExplosionを宣言
     public void Explosion() {
         
@@ -31,10 +34,18 @@ public class SpaceShip : MonoBehaviour {
         Instantiate(Bullet, origin.position, origin.rotation);
     }
 
-    // 
+    // 開始時に呼び出される
     void Start () {
-		
+        
+        // Animatorコンポーネントの取得
+        Animator = GetComponent<Animator>();
 	}
+
+    // Animatorコンポーネントの取得
+    public Animator GetAnimator ()
+    {
+        return Animator;
+    }
 	
 	// 
 	void Update () {

@@ -7,6 +7,9 @@ public class Enemy : MonoBehaviour
     // SpaceShipコンポーネントを追加
     SpaceShip SpaceShip;
 
+    // メンバ変数
+    public int HP = 1;
+
     // コルーチンでメソッドStartを呼びだす
     IEnumerator Start()
     {
@@ -53,13 +56,33 @@ public class Enemy : MonoBehaviour
         // レイヤー名がBullet (Player)である時以外何もしない
         if (LayerName != "Bullet (Player)") return;
 
+        // PlayerBulletのTransformを取得
+        Transform PlayerBulletTransform = C.transform.parent;
+
+        // Bulletコンポーネントを取得
+        Bullet Bullet = PlayerBulletTransform.GetComponent<Bullet>();
+
+        // HPを減らす
+        HP = HP - Bullet.Power;
+
         // 弾を削除
         Destroy(C.gameObject);
 
-        // 爆発
-        SpaceShip.Explosion();
+        // HPが0ならば
+        if (HP <= 0)
+        {
 
-        // Enemyの削除
-        Destroy(gameObject);
+            // 爆発
+            SpaceShip.Explosion();
+
+            // Enemyの削除
+            Destroy(gameObject);
+
+            // そうで無ければ
+        }else{
+
+            // Damageトリガーをセットする
+            SpaceShip.GetAnimator().SetTrigger("Damage");
+        }
     }
 }
