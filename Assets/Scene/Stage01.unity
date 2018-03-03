@@ -346,9 +346,9 @@ MonoBehaviour:
   Waves:
   - {fileID: 1792968888672128, guid: 0e75521c8d1b54ba5ad4930f7e678a18, type: 2}
   - {fileID: 1088920693024920, guid: b83564855b11d4c5a98d90d499711595, type: 2}
-  - {fileID: 1705464959603974, guid: 09b6a3412264c45f48eedbffb373f855, type: 2}
-  - {fileID: 1465972493577090, guid: 966553c72673c4d0b94826ecc2596688, type: 2}
+  - {fileID: 1634316629869588, guid: 854e51356f0e0460e8ef3fb97423a998, type: 2}
   - {fileID: 1202088430649058, guid: 7f37cf402ba3e4e159eafd645a138536, type: 2}
+  - {fileID: 1705464959603974, guid: 09b6a3412264c45f48eedbffb373f855, type: 2}
 --- !u!4 &1214350870
 Transform:
   m_ObjectHideFlags: 0
