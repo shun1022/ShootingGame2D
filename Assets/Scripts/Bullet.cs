@@ -10,6 +10,9 @@ public class Bullet : MonoBehaviour {
     // メンバ変数
     public float LifeTime = 5;
 
+    // メンバ変数
+    public int Power = 1;
+
 	// 最初に一度だけ呼び出されるメソッドStart
 	void Start () {
         // Rigidbody2Dを取得、速度Speedで移動する
