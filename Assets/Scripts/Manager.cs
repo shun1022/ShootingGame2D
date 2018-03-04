@@ -10,6 +10,8 @@ public class Manager : MonoBehaviour {
     // Title
     private GameObject Title;
 
+    public Score Score;
+
 	// Use this for initialization
 	void Start () {
 
@@ -42,8 +44,14 @@ public class Manager : MonoBehaviour {
     public void GameOver ()
     {
 
+        // ハイスコアを保存する
+        FindObjectOfType<Score>().Save();
+
         // タイトルを表示する
         Title.SetActive(true);
+
+        Score.Intialaize();
+
     }
 
     // bool型の戻り値を返す関数の宣言

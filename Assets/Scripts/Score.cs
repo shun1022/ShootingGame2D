@@ -11,13 +11,13 @@ public class Score : MonoBehaviour {
     public GUIText HighScoreGUIText;
 
     // スコアを保持するローカル変数
-    private int score;
+    int score;
 
     // ハイスコアを保持するローカル変数
-    private int highScore;
+    int highScore;
 
     // PlayerPrefsで保存する為のキー
-    private string highScoreKey = "highScore";
+    string highScoreKey = "highScore";
 
 
 	// Use this for initialization
@@ -27,6 +27,7 @@ public class Score : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        
         // scoreがhighScoreより大きければハイスコアを更新する
         if (score > highScore)
         {
@@ -35,12 +36,12 @@ public class Score : MonoBehaviour {
 
         // string型に変換してGUITextに代入
         ScoreGUIText.text = score.ToString();
-        HighScoreGUIText.text = "HIGH SCORE: " + highScore.ToString();
+        HighScoreGUIText.text = "HIGH SCORE:" + highScore.ToString();
 
 	}
 
     // ゲーム開始前の状態に戻すメソッド宣言
-    private void Intialaize() 
+    public void Intialaize() 
     {
         // スコアを0に戻す
         score = 0;
