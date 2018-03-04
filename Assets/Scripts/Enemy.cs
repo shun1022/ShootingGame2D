@@ -10,6 +10,9 @@ public class Enemy : MonoBehaviour
     // メンバ変数
     public int HP = 1;
 
+    // 
+    public int point = 10000;
+
     // コルーチンでメソッドStartを呼びだす
     IEnumerator Start()
     {
@@ -71,6 +74,9 @@ public class Enemy : MonoBehaviour
         // HPが0ならば
         if (HP <= 0)
         {
+
+            // スコアコンポーネントを探して取得、ポイントを追加
+            FindObjectOfType<Score>().AddPoint(point);
 
             // 爆発
             SpaceShip.Explosion();
