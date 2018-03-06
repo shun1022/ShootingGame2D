@@ -10,7 +10,11 @@ public class Manager : MonoBehaviour {
     // Title
     private GameObject Title;
 
+    // Scoreコンポーネントの取得
     public Score Score;
+
+    // EmitterのWaveを取得
+    public Emitter Emitter;
 
 	// Use this for initialization
 	void Start () {
@@ -50,7 +54,11 @@ public class Manager : MonoBehaviour {
         // タイトルを表示する
         Title.SetActive(true);
 
+        // スコアの初期化
         Score.Intialaize();
+
+        // 
+        Destroy(Emitter);
 
     }
 
