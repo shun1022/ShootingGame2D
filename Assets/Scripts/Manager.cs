@@ -8,13 +8,10 @@ public class Manager : MonoBehaviour {
     public GameObject Player;
 
     // Title
-    private GameObject Title;
+    public GameObject Title;
 
     // Scoreコンポーネントの取得
     public Score Score;
-
-    // EmitterのWaveを取得
-    public Emitter Emitter;
 
 	// Use this for initialization
 	void Start () {
@@ -56,9 +53,6 @@ public class Manager : MonoBehaviour {
 
         // スコアの初期化
         Score.Intialaize();
-
-        // 
-        Destroy(Emitter);
 
     }
 
