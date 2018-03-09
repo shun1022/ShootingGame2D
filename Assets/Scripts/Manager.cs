@@ -21,29 +21,15 @@ public class Manager : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void OnGUI () {
 
-        for (int i = 0; i < Input.touchCount; i ++)
-        {
-
-            // タッチ情報を取得する
-            Touch touch = Input.GetTouch(i);
-
-            // ゲーム中ではなくタッチ直後であればtrueを返す
-            if (IsPlaying() == false && touch.phase == TouchPhase.Began)
+            // ゲーム中ではなくタッチもしくはマウスクリック直後であればtrueを返す
+        if (IsPlaying() == false && Event.current.type == EventType.MouseDown)
             {
                 GameStart();
             }
         }
 
-		// ゲーム中ではなく、かつマウスクリックされたらtrueを返す
-        if (IsPlaying () == false && Input.GetMouseButtonDown(0))
-        {
-
-            // GameStartメソッドを呼びだす
-            GameStart();
-        }
-	}
 
     // メソッドの宣言
     void GameStart ()
