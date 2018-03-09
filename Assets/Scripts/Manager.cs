@@ -8,8 +8,9 @@ public class Manager : MonoBehaviour {
     public GameObject Player;
 
     // Title
-    private GameObject Title;
+    public GameObject Title;
 
+    // Scoreコンポーネントの取得
     public Score Score;
 
 	// Use this for initialization
@@ -50,6 +51,7 @@ public class Manager : MonoBehaviour {
         // タイトルを表示する
         Title.SetActive(true);
 
+        // スコアの初期化
         Score.Intialaize();
 
     }
