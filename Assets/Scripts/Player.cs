@@ -24,19 +24,29 @@ public class Player : MonoBehaviour {
             GetComponent<AudioSource>().Play();
         }
 	}
-	
+
+
 	// Update is called once per frame
 	void Update () {
-        
-        // GetAxisRawメソッドによりキーボード入力で+1か-1を返す
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
+
+        Vector3 pos = transform.position;
+        Vector3 x = Input.mousePosition;
+        Vector3 y = Input.mousePosition;
+
 
         // 移動する向きを決める
         Vector2 direction = new Vector2(x, y).normalized;
 
         // 移動範囲を制限する
         Move(direction);
+
+
+        // GetAxisRawメソッドによりキーボード入力で+1か-1を返す
+        //float x = Input.GetAxisRaw("Horizontal");
+        //float y = Input.GetAxisRaw("Vertical");
+
+
+
 	}
 
     // メソッドMoveの宣言
