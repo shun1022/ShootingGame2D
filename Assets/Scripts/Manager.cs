@@ -22,10 +22,24 @@ public class Manager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
-		// ゲーム中ではなく、かつXキーが押されたらtrueを返す
-        if (IsPlaying () == false && Input.GetKeyDown(KeyCode.X))
+
+        for (int i = 0; i < Input.touchCount; i ++)
         {
+
+            // タッチ情報を取得する
+            Touch touch = Input.GetTouch(i);
+
+            // ゲーム中ではなくタッチ直後であればtrueを返す
+            if (IsPlaying() == false && touch.phase == TouchPhase.Began)
+            {
+                GameStart();
+            }
+        }
+
+		// ゲーム中ではなく、かつマウスクリックされたらtrueを返す
+        if (IsPlaying () == false && Input.GetMouseButtonDown(0))
+        {
+
             // GameStartメソッドを呼びだす
             GameStart();
         }
