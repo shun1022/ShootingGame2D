@@ -21,15 +21,15 @@ public class Manager : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        
-		// ゲーム中ではなく、かつXキーが押されたらtrueを返す
-        if (IsPlaying () == false && Input.GetKeyDown(KeyCode.X))
-        {
-            // GameStartメソッドを呼びだす
-            GameStart();
+	void OnGUI () {
+
+            // ゲーム中ではなくタッチもしくはマウスクリック直後であればtrueを返す
+        if (IsPlaying() == false && Event.current.type == EventType.MouseDown)
+            {
+                GameStart();
+            }
         }
-	}
+
 
     // メソッドの宣言
     void GameStart ()
