@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
     SpaceShip SpaceShip;
 
 
-
     // コルーチンでStartメソッドを呼び出す
     IEnumerator Start()
     {
@@ -32,26 +31,42 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 Pos = transform.position;
-        Vector3 ScreenPos = Input.mousePosition;
-        ScreenPos.z = 0;
-        Vector3 WorldPos = Camera.main.ScreenToWorldPoint(ScreenPos);
-
-
+        //Vector3 Pos = transform.position;
+        //Vector3 ScreenPos = Input.mousePosition;
+        //Vector3 WorldPos = Camera.main.ScreenToWorldPoint(ScreenPos);
+        float x = Input.mousePosition.x;
+        float y = Input.mousePosition.y;
+        //float z = Input.mousePosition.z;
 
         // 移動する向きを決める
-        Vector3 Direction = (Pos - WorldPos).normalized;
+        Vector2 Direction = new Vector2(x, y).normalized;
 
         // 移動範囲を制限する
-        Move(Direction);
+       Move(Direction);
 
 
         // GetAxisRawメソッドによりキーボード入力で+1か-1を返す
-        //float x = Input.GetAxisRaw("Horizontal");
-        //float y = Input.GetAxisRaw("Vertical");
+        //x = Input.GetAxisRaw("Horizontal");
+        //y = Input.GetAxisRaw("Vertical");
 
+    }
 
+    public GameObject player;
+    Vector3 PlayerPos;
+    Vector3 Offset;
+    Vector3 ScreenPos = Input.mousePosition;
 
+    void OnMouseDown()
+    {
+        this.ScreenPos = Camera.main.WorldToScreenPoint(player.transform.position);
+        this.Offset = player.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, ScreenPos.z));
+    }
+
+    void OnMouseDrag()
+    {
+        Vector3 currentScreenPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, ScreenPos.z);
+        Vector3 currentPos = Camera.main.ScreenToWorldPoint(currentScreenPos) + this.Offset;
+        player.transform.position = currentPos;
     }
 
     // メソッドMoveの宣言
