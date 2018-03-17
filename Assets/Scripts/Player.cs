@@ -34,15 +34,15 @@ public class Player : MonoBehaviour
         //Vector3 Pos = transform.position;
         //Vector3 ScreenPos = Input.mousePosition;
         //Vector3 WorldPos = Camera.main.ScreenToWorldPoint(ScreenPos);
-        float x = Input.mousePosition.x;
-        float y = Input.mousePosition.y;
+        //float x = Input.mousePosition.x;
+        //float y = Input.mousePosition.y;
         //float z = Input.mousePosition.z;
 
         // 移動する向きを決める
-        Vector2 Direction = new Vector2(x, y).normalized;
+        //Vector2 Direction = new Vector2(x, y).normalized;
 
         // 移動範囲を制限する
-       Move(Direction);
+       //Move(Direction);
 
 
         // GetAxisRawメソッドによりキーボード入力で+1か-1を返す
@@ -52,9 +52,8 @@ public class Player : MonoBehaviour
     }
 
     public GameObject player;
-    Vector3 PlayerPos;
-    Vector3 Offset;
-    Vector3 ScreenPos = Input.mousePosition;
+    private Vector3 Offset;
+    private Vector3 ScreenPos;
 
     void OnMouseDown()
     {
