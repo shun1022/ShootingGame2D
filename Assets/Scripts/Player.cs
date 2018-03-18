@@ -31,42 +31,50 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.touchCount > 0)
+        {
+            foreach(Touch touchPoint in Input.touches)
+            {
+                if (touchPoint.phase != TouchPhase.Ended && touchPoint.phase != TouchPhase.Canceled)
+                {
+                    Debug.Log ("x=" + touchPoint.position.x + "y=" + touchPoint.position.y);
+
+                    // 移動する向きを決める
+                    Vector2 direction = new Vector2(x, y).normalized;
+
+                    // 移動範囲を制限する
+                    Move(direction);
+                }
+            }
+        }
         //Vector3 Pos = transform.position;
         //Vector3 ScreenPos = Input.mousePosition;
         //Vector3 WorldPos = Camera.main.ScreenToWorldPoint(ScreenPos);
-        //float x = Input.mousePosition.x;
-        //float y = Input.mousePosition.y;
-        //float z = Input.mousePosition.z;
-
-        // 移動する向きを決める
-        //Vector2 Direction = new Vector2(x, y).normalized;
-
-        // 移動範囲を制限する
-       //Move(Direction);
-
 
         // GetAxisRawメソッドによりキーボード入力で+1か-1を返す
-        //x = Input.GetAxisRaw("Horizontal");
-        //y = Input.GetAxisRaw("Vertical");
+        //float x = Input.GetAxisRaw("Horizontal");
+        //float y = Input.GetAxisRaw("Vertical");
+
+
 
     }
 
-    public GameObject player;
-    private Vector3 Offset;
-    private Vector3 ScreenPos;
+    //public GameObject player;
+    //private Vector3 Offset;
+    //private Vector3 ScreenPos;
 
-    void OnMouseDown()
-    {
-        this.ScreenPos = Camera.main.WorldToScreenPoint(player.transform.position);
-        this.Offset = player.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, ScreenPos.z));
-    }
+    //void OnMouseDown()
+    //{
+        //this.ScreenPos = Camera.main.WorldToScreenPoint(player.transform.position);
+        //this.Offset = player.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, ScreenPos.z));
+    //}
 
-    void OnMouseDrag()
-    {
-        Vector3 currentScreenPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, ScreenPos.z);
-        Vector3 currentPos = Camera.main.ScreenToWorldPoint(currentScreenPos) + this.Offset;
-        player.transform.position = currentPos;
-    }
+    //void OnMouseDrag()
+    //{
+        //Vector3 currentScreenPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, ScreenPos.z);
+        //Vector3 currentPos = Camera.main.ScreenToWorldPoint(currentScreenPos) + this.Offset;
+        //player.transform.position = currentPos;
+    //}
 
     // メソッドMoveの宣言
     void Move(Vector2 direction)
