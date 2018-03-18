@@ -33,19 +33,17 @@ public class Player : MonoBehaviour
     {
         if (Input.touchCount > 0)
         {
-            foreach(Touch touchPoint in Input.touches)
-            {
-                if (touchPoint.phase != TouchPhase.Ended && touchPoint.phase != TouchPhase.Canceled)
-                {
-                    Debug.Log ("x=" + touchPoint.position.x + "y=" + touchPoint.position.y);
+            Touch touch = Input.GetTouch(0);
+            Vector3 vec = touch.position;
+            vec.z = 10f;
+            vec = Camera.main.ScreenToWorldPoint(vec);
+            transform.position = vec;
 
-                    // 移動する向きを決める
-                    Vector2 direction = new Vector2(x, y).normalized;
+            // 移動する向きを決める
+            //Vector2 direction = new Vector2(x, y).normalized;
 
-                    // 移動範囲を制限する
-                    Move(direction);
-                }
-            }
+            // 移動範囲を制限する
+            //Move(direction);
         }
         //Vector3 Pos = transform.position;
         //Vector3 ScreenPos = Input.mousePosition;
@@ -77,29 +75,29 @@ public class Player : MonoBehaviour
     //}
 
     // メソッドMoveの宣言
-    void Move(Vector2 direction)
-    {
+    //void Move(Vector2 direction)
+    //{
 
         // 画面左下のワールド座標をローカル変数minにビューポートから取得する
-        Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
+        //Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
 
         // 画面右上のワールド座標をローカル変数maxにビューポートから取得する
-        Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
+       // Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
 
         // プレイヤー位置をローカル変数posに取得する
-        Vector2 pos = transform.position;
+       // Vector2 pos = transform.position;
 
         // 運動量を加える
-        pos += direction * SpaceShip.Speed * Time.deltaTime;
+       // pos += direction * SpaceShip.Speed * Time.deltaTime;
 
         // プレイヤー位置を画面内に収まる値に制限する
-        pos.x = Mathf.Clamp(pos.x, min.x, max.x);
-        pos.y = Mathf.Clamp(pos.y, min.y, max.y);
+       // pos.x = Mathf.Clamp(pos.x, min.x, max.x);
+       // pos.y = Mathf.Clamp(pos.y, min.y, max.y);
 
         // 制限内の位置にプレイヤーを移動する
-        transform.position = pos;
+      //  transform.position = pos;
 
-    }
+    //}
 
     // 何かにぶつかった時に呼びだされるメソッド
     void OnTriggerEnter2D(Collider2D C)
