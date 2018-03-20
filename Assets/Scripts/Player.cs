@@ -8,6 +8,9 @@ public class Player : MonoBehaviour
     // SpaceShipコンポーネントを追加
     SpaceShip SpaceShip;
 
+    public int ShotPower;
+
+
 
     // コルーチンでStartメソッドを呼び出す
     IEnumerator Start()
@@ -25,6 +28,7 @@ public class Player : MonoBehaviour
             // GetComponentでAudioSourceを取得しPlayメソッドで再生する
             GetComponent<AudioSource>().Play();
         }
+
     }
 
 
@@ -46,7 +50,6 @@ public class Player : MonoBehaviour
             // 移動範囲を制限する
             Move(direction);
         }
-
     }
 
 

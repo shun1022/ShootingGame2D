@@ -199,6 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8423e180d7f954372b3efd080e59125e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShotPower: 0
 --- !u!114 &114385839196865008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -214,6 +215,7 @@ MonoBehaviour:
   ShotDelay: 0.05
   CanShot: 1
   Bullet: {fileID: 1542036616573626, guid: f18fe1500e67e467f94f4bfc0c8d8f2d, type: 2}
+  Bullet2: {fileID: 1275917386032584, guid: 5eea04f90ae95470c9274da7b7a73cd1, type: 2}
   explosion: {fileID: 1086301799807590, guid: 7708419d009e84c5fb0a7fdcc6ae5baa, type: 2}
 --- !u!212 &212240851763178552
 SpriteRenderer:

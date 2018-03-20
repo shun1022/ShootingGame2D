@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PowerUP : MonoBehaviour {
 
+    public Player Player;
 	// Use this for initialization
 	void Start () {
 		
@@ -13,4 +14,10 @@ public class PowerUP : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void OnTriggerEnter2D()
+    {
+        Player.ShotPower = Player.ShotPower + 1;
+        Destroy(gameObject);
+    }
 }

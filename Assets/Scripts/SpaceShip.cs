@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class SpaceShip : MonoBehaviour {
 
+    Player Player;
     // メンバ変数の宣言
     public float Speed;
     public float ShotDelay;
@@ -12,6 +13,8 @@ public class SpaceShip : MonoBehaviour {
 
     // ゲームオブジェクトにBulletコンポーネントを追加するためにGameObject型の変数Bulletを宣言
     public GameObject Bullet;
+
+    public GameObject Bullet2;
 
     // ゲームオブジェクトにExplosionコンポーネントを追加
     public GameObject explosion;
@@ -27,10 +30,16 @@ public class SpaceShip : MonoBehaviour {
     }
 
     // 弾を作成するメソッドShotの宣言
-    public void Shot (Transform origin)
+    public void Shot(Transform origin)
     {
         // オブジェクトBulletを生成する
         Instantiate(Bullet, origin.position, origin.rotation);
+
+        if (Player.ShotPower == 1)
+        {
+            Instantiate(Bullet2, origin.position, origin.rotation);
+
+        }
     }
 
     // 開始時に呼び出される
