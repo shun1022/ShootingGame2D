@@ -624,6 +624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 10
+  point: 10000
 --- !u!114 &114348372673597128
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -652,6 +653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 10
+  point: 10000
 --- !u!114 &114626739144948860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -664,6 +666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 10
+  point: 10000
 --- !u!114 &114639395710789438
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -398,9 +398,11 @@ MonoBehaviour:
   Waves:
   - {fileID: 1792968888672128, guid: 0e75521c8d1b54ba5ad4930f7e678a18, type: 2}
   - {fileID: 1088920693024920, guid: b83564855b11d4c5a98d90d499711595, type: 2}
+  - {fileID: 1672039165612730, guid: 71a22e153b91147b98ac352c64d5ca11, type: 2}
   - {fileID: 1634316629869588, guid: 854e51356f0e0460e8ef3fb97423a998, type: 2}
   - {fileID: 1202088430649058, guid: 7f37cf402ba3e4e159eafd645a138536, type: 2}
   - {fileID: 1705464959603974, guid: 09b6a3412264c45f48eedbffb373f855, type: 2}
+  - {fileID: 1717105142133774, guid: 1ac5395ef658946ddaf5d86d5f468440, type: 2}
 --- !u!4 &1214350870
 Transform:
   m_ObjectHideFlags: 0
@@ -532,7 +534,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 45950dc62071e4e388008c72e45a3c9d, type: 2}
+  - {fileID: 2100000, guid: d2a014875c64148c9986efd561113b58, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1119,7 +1121,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 3.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

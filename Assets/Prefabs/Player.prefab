@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1082464351209668}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.1741285, y: -1.3102198, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -89,7 +89,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.06, y: 0.06}
+  m_Size: {x: 0.01, y: 0.01}
   m_EdgeRadius: 0
 --- !u!82 &82500283168259280
 AudioSource:
@@ -210,10 +210,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c906f7cc5875d49f2a25c23a8b1a9a10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 1
+  Speed: 0.5
   ShotDelay: 0.05
   CanShot: 1
+  ShotPower: 0
   Bullet: {fileID: 1542036616573626, guid: f18fe1500e67e467f94f4bfc0c8d8f2d, type: 2}
+  Bullet2: {fileID: 1275917386032584, guid: 5eea04f90ae95470c9274da7b7a73cd1, type: 2}
   explosion: {fileID: 1086301799807590, guid: 7708419d009e84c5fb0a7fdcc6ae5baa, type: 2}
 --- !u!212 &212240851763178552
 SpriteRenderer:

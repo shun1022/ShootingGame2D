@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
             // GetComponentでAudioSourceを取得しPlayメソッドで再生する
             GetComponent<AudioSource>().Play();
         }
+
     }
 
 
@@ -46,7 +47,6 @@ public class Player : MonoBehaviour
             // 移動範囲を制限する
             Move(direction);
         }
-
     }
 
 
@@ -80,6 +80,12 @@ public class Player : MonoBehaviour
     {
         // レイヤーの名前をLayerNameに取得する
         string LayerName = LayerMask.LayerToName(C.gameObject.layer);
+
+        if (LayerName == "Item")
+        {
+            SpaceShip.ShotPower = SpaceShip.ShotPower + 1;
+            Destroy(C.gameObject);
+        }
 
         // レイヤー名がBullet(Enemy)の場合
         if (LayerName == "Bullet(Enemy)")
