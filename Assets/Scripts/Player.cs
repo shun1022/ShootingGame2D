@@ -8,9 +8,6 @@ public class Player : MonoBehaviour
     // SpaceShipコンポーネントを追加
     SpaceShip SpaceShip;
 
-    public int ShotPower;
-
-
 
     // コルーチンでStartメソッドを呼び出す
     IEnumerator Start()
@@ -83,6 +80,12 @@ public class Player : MonoBehaviour
     {
         // レイヤーの名前をLayerNameに取得する
         string LayerName = LayerMask.LayerToName(C.gameObject.layer);
+
+        if (LayerName == "Item")
+        {
+            SpaceShip.ShotPower = SpaceShip.ShotPower + 1;
+            Destroy(C.gameObject);
+        }
 
         // レイヤー名がBullet(Enemy)の場合
         if (LayerName == "Bullet(Enemy)")

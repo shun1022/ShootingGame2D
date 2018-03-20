@@ -999,8 +999,7 @@ Prefab:
         type: 2}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 114362250488393710, guid: 122f0789d9923487cb447e9d49d8fcf1,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 58796606164982482, guid: da5fb8158a6264285a3f0491e72fe86b,
         type: 2}
       propertyPath: m_Offset.x
@@ -1015,6 +1014,11 @@ Prefab:
         type: 2}
       propertyPath: m_Radius
       value: 0.193245
+      objectReference: {fileID: 0}
+    - target: {fileID: 114161208148433064, guid: da5fb8158a6264285a3f0491e72fe86b,
+        type: 2}
+      propertyPath: SpaceShip
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: da5fb8158a6264285a3f0491e72fe86b, type: 2}
