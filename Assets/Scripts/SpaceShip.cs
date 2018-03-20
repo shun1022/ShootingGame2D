@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
@@ -15,6 +16,7 @@ public class SpaceShip : MonoBehaviour {
     public GameObject Bullet;
 
     public GameObject Bullet2;
+
 
     // ゲームオブジェクトにExplosionコンポーネントを追加
     public GameObject explosion;
