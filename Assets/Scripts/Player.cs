@@ -33,7 +33,10 @@ public class Player : MonoBehaviour
     {
         if (Input.touchCount > 0)
         {
+            // タッチを取得
             Touch touch = Input.GetTouch(0);
+
+            // xとyに指の移動量を代入
             float x = touch.deltaPosition.x;
             float y = touch.deltaPosition.y;
 
@@ -43,34 +46,9 @@ public class Player : MonoBehaviour
             // 移動範囲を制限する
             Move(direction);
         }
-        //Vector3 Pos = transform.position;
-        //Vector3 ScreenPos = Input.mousePosition;
-        //Vector3 WorldPos = Camera.main.ScreenToWorldPoint(ScreenPos);
-
-        // GetAxisRawメソッドによりキーボード入力で+1か-1を返す
-        //float x = Input.GetAxisRaw("Horizontal");
-        //float y = Input.GetAxisRaw("Vertical");
-
-
 
     }
 
-    //public GameObject player;
-    //private Vector3 Offset;
-    //private Vector3 ScreenPos;
-
-    //void OnMouseDown()
-    //{
-        //this.ScreenPos = Camera.main.WorldToScreenPoint(player.transform.position);
-        //this.Offset = player.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, ScreenPos.z));
-    //}
-
-    //void OnMouseDrag()
-    //{
-        //Vector3 currentScreenPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, ScreenPos.z);
-        //Vector3 currentPos = Camera.main.ScreenToWorldPoint(currentScreenPos) + this.Offset;
-        //player.transform.position = currentPos;
-    //}
 
     // メソッドMoveの宣言
     void Move(Vector2 direction)
