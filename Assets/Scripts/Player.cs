@@ -2,42 +2,53 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour
+{
 
     // SpaceShipコンポーネントを追加
     SpaceShip SpaceShip;
 
 
-        
     // コルーチンでStartメソッドを呼び出す
-    IEnumerator Start () {
-        
+    IEnumerator Start()
+    {
+
         // GetComponentでSpaceShipクラスのインスタンスを取得しローカル変数SpaceShipで保持
         SpaceShip = GetComponent<SpaceShip>();
 
         // 発射するたびにShotDelay秒中断し、再開する
-        while (true) {
+        while (true)
+        {
             SpaceShip.Shot(transform);
             yield return new WaitForSeconds(SpaceShip.ShotDelay);
 
             // GetComponentでAudioSourceを取得しPlayメソッドで再生する
             GetComponent<AudioSource>().Play();
         }
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        
-        // GetAxisRawメソッドによりキーボード入力で+1か-1を返す
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
+    }
 
-        // 移動する向きを決める
-        Vector2 direction = new Vector2(x, y).normalized;
 
-        // 移動範囲を制限する
-        Move(direction);
-	}
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.touchCount > 0)
+        {
+            // タッチを取得
+            Touch touch = Input.GetTouch(0);
+
+            // xとyに指の移動量を代入
+            float x = touch.deltaPosition.x;
+            float y = touch.deltaPosition.y;
+
+            // 移動する向きを決める
+            Vector2 direction = new Vector2(x, y);
+
+            // 移動範囲を制限する
+            Move(direction);
+        }
+
+    }
+
 
     // メソッドMoveの宣言
     void Move(Vector2 direction)
@@ -71,14 +82,14 @@ public class Player : MonoBehaviour {
         string LayerName = LayerMask.LayerToName(C.gameObject.layer);
 
         // レイヤー名がBullet(Enemy)の場合
-        if ( LayerName == "Bullet(Enemy)")
+        if (LayerName == "Bullet(Enemy)")
         {
             // 弾を削除
             Destroy(C.gameObject);
         }
 
         // レイヤー名がBullet(Enemy),Enemyだった場合
-        if ( LayerName == "Bullet (Enemy)" || LayerName == "Enemy")
+        if (LayerName == "Bullet (Enemy)" || LayerName == "Enemy")
         {
             // 機体が爆発する
             SpaceShip.Explosion();
