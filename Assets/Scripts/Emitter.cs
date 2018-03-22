@@ -31,7 +31,7 @@ public class Emitter : MonoBehaviour {
         {
 
             // Title表示中の処理
-            while (Manager.IsPlaying() == false)
+            while (Manager.NotTitle() == false)
             {
                 // 待機する
                 yield return new WaitForEndOfFrame();

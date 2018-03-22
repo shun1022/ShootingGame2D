@@ -10,32 +10,47 @@ public class Manager : MonoBehaviour {
     // Title
     public GameObject Title;
 
+    public GameObject GameOverGUI;
+
     // Scoreコンポーネントの取得
     public Score Score;
+
+    public int Stock;
 
 	// Use this for initialization
 	void Start () {
 
         // Titleゲームオブジェクトを検索して取得する
         Title = GameObject.Find("Title");
+
+        GameOverGUI.SetActive(false);
 	}
 	
-	// Update is called once per frame
-	void OnGUI () {
+	void OnGUI () 
+    {
 
             // ゲーム中ではなくタッチもしくはマウスクリック直後であればtrueを返す
-        if (IsPlaying() == false && Event.current.type == EventType.MouseDown)
+        if (NotTitle() == false && Event.current.type == EventType.MouseDown)
             {
-                GameStart();
+             GameStart();
             }
+        if (NotGOGUI() == false && Event.current.type == EventType.MouseDown)
+        {
+            GameStart();
         }
+    }
 
 
     // メソッドの宣言
     void GameStart ()
     {
-       // Titleオブジェクトを非表示にする
+
+        Stock = 2;
+
+        // Titleオブジェクトを非表示にする
         Title.SetActive(false);
+
+        GameOverGUI.SetActive(false);
 
         // Playerオブジェクトを作成する
         Instantiate(Player, Player.transform.position, Player.transform.rotation);
@@ -44,23 +59,38 @@ public class Manager : MonoBehaviour {
     // メソッドの宣言
     public void GameOver ()
     {
-
-        // ハイスコアを保存する
-        FindObjectOfType<Score>().Save();
-
-        // タイトルを表示する
-        Title.SetActive(true);
-
-        // スコアの初期化
-        Score.Intialaize();
+        Stock = Stock - 1;
+        if (Stock == -1)
+        {
+            GameEnd();
+        }else{
+            Instantiate(Player, Player.transform.position, Player.transform.rotation);
+        }
 
     }
 
+    public void GameEnd()
+    {
+        GameOverGUI.SetActive(true);
+                   
+        // ハイスコアを保存する
+        FindObjectOfType<Score>().Save();
+
+        // スコアの初期化
+        Score.Intialaize(); 
+    }
+
     // bool型の戻り値を返す関数の宣言
-    public bool IsPlaying ()
+    public bool NotTitle ()
     {
 
         // タイトルが表示されていればゲーム中ではない
         return Title.activeSelf == false;
+
+    }
+
+    public bool NotGOGUI ()
+    {
+        return GameOverGUI.activeSelf == false;
     }
 }
