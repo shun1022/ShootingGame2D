@@ -15,7 +15,7 @@ public class Manager : MonoBehaviour {
     // Scoreコンポーネントの取得
     public Score Score;
 
-    public int Stock = 2;
+    public int Stock;
 
 	// Use this for initialization
 	void Start () {
@@ -26,7 +26,6 @@ public class Manager : MonoBehaviour {
         GameOverGUI.SetActive(false);
 	}
 	
-	// Update is called once per frame
 	void OnGUI () {
 
             // ゲーム中ではなくタッチもしくはマウスクリック直後であればtrueを返す
@@ -40,8 +39,13 @@ public class Manager : MonoBehaviour {
     // メソッドの宣言
     void GameStart ()
     {
-       // Titleオブジェクトを非表示にする
+
+        Stock = 2;
+
+        // Titleオブジェクトを非表示にする
         Title.SetActive(false);
+
+        GameOverGUI.SetActive(false);
 
         // Playerオブジェクトを作成する
         Instantiate(Player, Player.transform.position, Player.transform.rotation);
@@ -66,9 +70,6 @@ public class Manager : MonoBehaviour {
                    
         // ハイスコアを保存する
         FindObjectOfType<Score>().Save();
-
-        // タイトルを表示する
-        Title.SetActive(true);
 
         // スコアの初期化
         Score.Intialaize(); 
