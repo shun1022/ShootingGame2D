@@ -26,14 +26,19 @@ public class Manager : MonoBehaviour {
         GameOverGUI.SetActive(false);
 	}
 	
-	void OnGUI () {
+	void OnGUI () 
+    {
 
             // ゲーム中ではなくタッチもしくはマウスクリック直後であればtrueを返す
-        if (IsPlaying() == false && Event.current.type == EventType.MouseDown)
+        if (NotTitle() == false && Event.current.type == EventType.MouseDown)
             {
-                GameStart();
+             GameStart();
             }
+        if (NotGOGUI() == false && Event.current.type == EventType.MouseDown)
+        {
+            GameStart();
         }
+    }
 
 
     // メソッドの宣言
@@ -76,10 +81,16 @@ public class Manager : MonoBehaviour {
     }
 
     // bool型の戻り値を返す関数の宣言
-    public bool IsPlaying ()
+    public bool NotTitle ()
     {
 
         // タイトルが表示されていればゲーム中ではない
         return Title.activeSelf == false;
+
+    }
+
+    public bool NotGOGUI ()
+    {
+        return GameOverGUI.activeSelf == false;
     }
 }
