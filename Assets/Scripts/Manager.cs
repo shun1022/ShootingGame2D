@@ -10,14 +10,20 @@ public class Manager : MonoBehaviour {
     // Title
     public GameObject Title;
 
+    public GameObject GameOverGUI;
+
     // Scoreコンポーネントの取得
     public Score Score;
+
+    public int Stock = 2;
 
 	// Use this for initialization
 	void Start () {
 
         // Titleゲームオブジェクトを検索して取得する
         Title = GameObject.Find("Title");
+
+        GameOverGUI.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -44,7 +50,20 @@ public class Manager : MonoBehaviour {
     // メソッドの宣言
     public void GameOver ()
     {
+        Stock = Stock - 1;
+        if (Stock == -1)
+        {
+            GameEnd();
+        }else{
+            Instantiate(Player, Player.transform.position, Player.transform.rotation);
+        }
 
+    }
+
+    public void GameEnd()
+    {
+        GameOverGUI.SetActive(true);
+                   
         // ハイスコアを保存する
         FindObjectOfType<Score>().Save();
 
@@ -52,8 +71,7 @@ public class Manager : MonoBehaviour {
         Title.SetActive(true);
 
         // スコアの初期化
-        Score.Intialaize();
-
+        Score.Intialaize(); 
     }
 
     // bool型の戻り値を返す関数の宣言
